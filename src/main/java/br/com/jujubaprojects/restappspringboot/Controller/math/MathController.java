@@ -1,4 +1,4 @@
-package br.com.jujubaprojects.restappspringboot.Controller;
+package br.com.jujubaprojects.restappspringboot.Controller.math;
 
 import java.util.concurrent.atomic.AtomicLong;
 
