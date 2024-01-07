@@ -20,7 +20,7 @@ public class PersonService {
 		logger.info("Finding all people!");
 		
 		List<Person> persons = new ArrayList<>();
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i <= 8; i++) {
 			Person person = mockPerson(i);
 			persons.add(person);
 		}
@@ -33,9 +33,9 @@ public class PersonService {
 		
 		Person person = new Person();
 		person.setId(counter.incrementAndGet());
-		person.setFirstName("Leandro");
-		person.setLastName("Costa");
-		person.setAddress("Uberlândia - Minas Gerais - Brasil");
+		person.setFirstName("Junior");
+		person.setLastName("Stranner");
+		person.setAddress("Santa Catarina - Laguna - Brasil");
 		person.setGender("Male");
 		return person;
 	}
