@@ -1,1 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rest-app-spring-boot
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver  # Corrigido aqui
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect  # Adicione essa linha
+server:
+  error:
+    whitelabel:
+      enabled: false
 

@@ -24,11 +24,11 @@ public class CustomizedResponseEntityExeptionHandler<ExceptionResponse> extends 
 	}
 	
 	@ExceptionHandler(UnsupportedOperationException.class)
-	public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(Exception ex, WebRequest request) {
+	public final ResponseEntity<ExceptionResponse> handleNotFoundExcptions(Exception ex, WebRequest request) {
 		
         ExeptionsResponse exceptionResponse = new ExeptionsResponse(new Date(),ex.getMessage(),request.getDescription(false));
 		return null;
 		
-	//	return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
+	//	return new ResponseEntity<>(exceptionResponse, HttpStatus.Not_Found);
 	}
   }
