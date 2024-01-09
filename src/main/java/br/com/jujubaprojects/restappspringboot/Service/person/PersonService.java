@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.jujubaprojects.restappspringboot.Model.person.Person;
 import br.com.jujubaprojects.restappspringboot.Repositories.PersonRepository;
+import br.com.jujubaprojects.restappspringboot.vo.PersonVO;
 
 @Service
 public class PersonService {
@@ -61,10 +62,10 @@ public class PersonService {
 		
 		logger.info("Deleting one person!");
 
-		Person pessoa = this.personRepository.findById(id)
+		Person person = this.personRepository.findById(id)
 		.orElseThrow();
 		
-        this.personRepository.delete(pessoa);
+        this.personRepository.delete(person);
 
 	}
 	

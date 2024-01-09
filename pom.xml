@@ -15,6 +15,8 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>20</java.version>
+	    <dozer.version>6.5.2</dozer.version>
+
 	</properties>
 	<dependencies>
 		<dependency>
@@ -56,6 +58,12 @@
     <groupId>jakarta.persistence</groupId>
     <artifactId>jakarta.persistence-api</artifactId>
     <version>3.2.2</version> <!-- Use a versão mais recente -->
+</dependency>
+
+<dependency>
+    <groupId>com.github.dozermapper</groupId>
+    <artifactId>dozer-core</artifactId>
+    <version>${dozer.version}</version>
 </dependency>
 
 	<build>
