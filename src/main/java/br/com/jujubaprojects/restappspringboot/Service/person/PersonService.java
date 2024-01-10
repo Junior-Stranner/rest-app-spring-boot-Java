@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.jujubaprojects.restappspringboot.Model.person.Person;
 import br.com.jujubaprojects.restappspringboot.Repositories.PersonRepository;
-import br.com.jujubaprojects.restappspringboot.vo.PersonVO;
+import br.com.jujubaprojects.restappspringboot.mapper.custom.PersonMapper;
 
 @Service
 public class PersonService {
@@ -20,6 +20,9 @@ public class PersonService {
 
 	@Autowired
 	PersonRepository personRepository;
+
+	@Autowired
+	PersonMapper mapper;
 
     
     	public List<Person> findAll() {
