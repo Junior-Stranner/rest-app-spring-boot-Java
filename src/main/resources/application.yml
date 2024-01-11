@@ -3,16 +3,23 @@ spring:
     url: jdbc:postgresql://localhost:5432/rest-app-spring-boot
     username: postgres
     password: 123
-    driver-class-name: org.postgresql.Driver  # Corrigido aqui
+    driver-class-name: org.postgresql.Driver
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect  # Adicione essa linha
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# Configurações específicas do Flyway
+flyway:
+  locations: classpath:db/migration  # Especifica o diretório onde os scripts SQL do Flyway estão localizados
+  baselineOnMigrate: true             # Cria uma linha de base se ela ainda não existir
+
 server:
   error:
     whitelabel:
       enabled: false
+
 

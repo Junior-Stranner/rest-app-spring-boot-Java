@@ -2,6 +2,9 @@ package br.com.jujubaprojects.restappspringboot.Model.person;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,6 +16,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "person")
+@JsonPropertyOrder({"id", "firstName", "lastName", "adress", "gender"})
 public class Person implements Serializable{
     
     private static final long serialVersionUID = 1L;
@@ -29,6 +33,8 @@ public class Person implements Serializable{
 
 	@Column(nullable = false , length = 100)
 	private String address;
+
+	@JsonIgnore
 	@Column(nullable = false , length = 6)
 	private String gender;
 	
