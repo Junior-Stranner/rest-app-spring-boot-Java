@@ -2,7 +2,6 @@ package br.com.jujubaprojects.restappspringboot.Model.person;
 
 import java.io.Serializable;
 
-import org.hibernate.boot.jaxb.hbm.internal.RepresentationModeConverter;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
