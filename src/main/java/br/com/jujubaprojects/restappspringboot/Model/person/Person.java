@@ -2,6 +2,8 @@ package br.com.jujubaprojects.restappspringboot.Model.person;
 
 import java.io.Serializable;
 
+import org.hibernate.boot.jaxb.hbm.internal.RepresentationModeConverter;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -17,12 +19,13 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "person")
 @JsonPropertyOrder({"id", "firstName", "lastName", "adress", "gender"})
-public class Person implements Serializable{
+public class Person /* extends RepresentationModeConverter<Person >*/ implements Serializable{
     
     private static final long serialVersionUID = 1L;
 
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@Mapping("id")
 	private Long id;
 
 	@Column(name = "first_name", nullable = false , length = 50)
