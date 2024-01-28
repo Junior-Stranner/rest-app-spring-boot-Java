@@ -1,4 +1,4 @@
-/*package br.com.jujubaprojects.restappspringboot.UnitTests.mapper;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -96,4 +96,4 @@ public class DozerConverterTest {
         assertEquals("Addres Test12", outputTwelve.getAddress());
         assertEquals("Male", outputTwelve.getGender());
     }
-}*/
+}
