@@ -30,11 +30,11 @@ public class PersonService {
 		return this.personRepository.findAll();
 	}
 
-	public Person findById(Long id) {
+	public Person findById(Long key) {
 		
 		logger.info("Finding one person!");
 	
-		return this.personRepository.findById(id)
+		return this.personRepository.findById(key)
 		.orElseThrow();
 	}
 	
@@ -47,7 +47,7 @@ public class PersonService {
 	
 	public Person update(Person person) {
 
-		this.personRepository.findById(person.getId())
+		this.personRepository.findById(person.getKey())
 		.orElseThrow();
 		
 		logger.info("Updating one person!");

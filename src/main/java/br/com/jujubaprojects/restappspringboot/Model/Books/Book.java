@@ -3,6 +3,8 @@ package br.com.jujubaprojects.restappspringboot.Model.Books;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.github.dozermapper.core.Mapping;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,6 +23,7 @@ public class Book implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Mapping("id")
 	private Long id;
 	
 	@Column(nullable = false, length = 180)

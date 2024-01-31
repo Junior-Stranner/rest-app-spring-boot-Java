@@ -5,14 +5,14 @@ import java.util.Date;
 import org.springframework.stereotype.Service;
 
 import br.com.jujubaprojects.restappspringboot.Model.person.Person;
-import br.com.jujubaprojects.restappspringboot.data.v2.PersonVOV2;
+import br.com.jujubaprojects.restappspringboot.data.v1.PersonVO;
 
 @Service
 public class PersonMapper {
     
-    public PersonVOV2 convertEntityToVO(Person person){
-        PersonVOV2 vo = new PersonVOV2();
-        vo.setId(person.getId());
+    public PersonVO convertEntityToVO(Person person){
+        PersonVO vo = new PersonVO();
+        vo.setKey(person.getKey());
         vo.setAddress(person.getAddress());
         vo.setBirthday(new Date());
         vo.setFirstName(person.getFirstName());
@@ -22,11 +22,11 @@ public class PersonMapper {
 
     }
 
-    public Person convertVoToEntity(PersonVOV2 person){
+    public Person convertVoToEntity(PersonVO person){
         Person entity = new Person();
-        entity.setId(person.getId());
+        entity.setKey(person.getKey());
         entity.setAddress(person.getAddress());
-        entity.setBirthday(new Date());
+    //    entity.se(new Date());
         entity.setFirstName(person.getFirstName());
         entity.setLastName(person.getLastName());
         entity.setGender(person.getGender());
