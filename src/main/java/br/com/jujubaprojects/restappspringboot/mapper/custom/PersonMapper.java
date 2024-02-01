@@ -1,7 +1,6 @@
 package br.com.jujubaprojects.restappspringboot.mapper.custom;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 import org.springframework.stereotype.Service;
 
@@ -13,9 +12,9 @@ public class PersonMapper {
     
     public PersonVO convertEntityToVO(Person person){
         PersonVO vo = new PersonVO();
-        vo.setKey(person.getKey());
+        vo.setKey(person.getId());
         vo.setAddress(person.getAddress());
-        vo.setBirthday(LocalDate.now());
+     //   vo.setBirthday(LocalDate.now());
         vo.setFirstName(person.getFirstName());
         vo.setLastName(person.getLastName());
         vo.setGender(person.getGender());
@@ -25,7 +24,7 @@ public class PersonMapper {
 
     public Person convertVoToEntity(PersonVO person){
         Person entity = new Person();
-        entity.setKey(person.getKey());
+        entity.setId(person.getKey());
         entity.setAddress(person.getAddress());
     //    entity.se(new Date());
         entity.setFirstName(person.getFirstName());

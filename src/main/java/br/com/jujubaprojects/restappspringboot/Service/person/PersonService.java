@@ -51,7 +51,7 @@ public class PersonService {
 		return vo;
 	}
 	
-	public PersonVO create(PersonVO person) {
+	public PersonVO create(PersonVO person) throws Exception {
 
 		if (person == null) throw new Exception(); //throw new RequiredObjectIsNullException();
 		
@@ -62,7 +62,7 @@ public class PersonService {
 		return vo;
 	}
 	
-	public PersonVO update(PersonVO person) {
+	public PersonVO update(PersonVO person) throws Exception {
 
 		if (person == null) throw new Exception();//throw new RequiredObjectIsNullException();
 		

@@ -23,27 +23,19 @@ public class PersonController {
     @Autowired
 	public PersonService personService;
 	///private PersonServices service = new PersonServices();
-	@GetMapping(produces = { MediaType.APPLICATION_JSON,
-		MediaType.APPLICATION_XML,
-		MediaType.APPLICATION_YML 
-		})//Swagger exige isso  "produces = MediaType.APPLICATION_JSON_VALUE"
+	@GetMapping(produces = { MediaType.APPLICATION_JSON_VALUE})//Swagger exige isso  "produces = MediaType.APPLICATION_JSON_VALUE"
 	public List<PersonVO> findAll() {
 		return personService.findAll();
 	}
 	
 	@GetMapping(value = "/{id}",
-		produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
-				MediaType.APPLICATION_YML  })//Swagger exige isso  "produces = MediaType.APPLICATION_JSON_VALUE"
+		produces = MediaType.APPLICATION_JSON_VALUE)//Swagger exige isso  "produces = MediaType.APPLICATION_JSON_VALUE"
 	public PersonVO findById(@PathVariable(value = "id") Long id) {
 		return personService.findById(id);
 	}
 	
-	@PostMapping(
-		consumes = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
-				MediaType.APPLICATION_YML  },
-		produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
-				MediaType.APPLICATION_YML  })//Swagger exige isso  "produces = MediaType.APPLICATION_JSON_VALUE"
-	public PersonVO  create(@RequestBody PersonVO  person) {
+	@PostMapping(produces = { MediaType.APPLICATION_JSON_VALUE })//Swagger exige isso  "produces = MediaType.APPLICATION_JSON_VALUE"
+	public PersonVO  create(@RequestBody PersonVO  person) throws Exception {
 		return personService.create(person);
 	}
 	

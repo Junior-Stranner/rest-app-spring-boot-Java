@@ -17,7 +17,7 @@ public class PersonVO extends RepresentationModel<PersonVO> implements Serializa
 
     
 	@JsonProperty("id")
-	@Mapping("id")
+    @Mapping("id")
 	private Long key;
 	private String firstName;
 	private String lastName;
@@ -30,15 +30,30 @@ public class PersonVO extends RepresentationModel<PersonVO> implements Serializa
 
 
 
+
+
+
+
+
 	public Long getKey() {
 		return key;
 	}
 
 
 
+
+
+
+
+
 	public void setKey(Long key) {
 		this.key = key;
 	}
+
+
+
+
+
 
 
 
