@@ -25,7 +25,7 @@ public class PersonController {
     private PersonService personService;
 	///private PersonServices service = new PersonServices();
 	
-	@GetMapping(produces = {MediaType.APPLICATION_XML_VALUE })//Swagger exige isso  "produces = MediaType.APPLICATION_JSON_VALUE"
+	@GetMapping(/*produces = {MediaType.APPLICATION_PRPERTIES_VALUE }*/)//Swagger exige isso  "produces = MediaType.APPLICATION_JSON_VALUE"
 	public List<Person> findAll() {
 		return personService.findAll();
 	}

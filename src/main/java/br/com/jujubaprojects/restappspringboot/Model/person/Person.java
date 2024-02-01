@@ -5,6 +5,7 @@ import java.io.Serializable;
 import org.springframework.hateoas.RepresentationModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.github.dozermapper.core.Mapping;
 
@@ -19,7 +20,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "person")
-@JsonPropertyOrder({"id", "firstName", "lastName", "adress", "gender"})
+@JsonPropertyOrder({"id", "first_name", "last_name", "adress", "gender"})
 public class Person  extends RepresentationModel<Person > implements Serializable{
     
     private static final long serialVersionUID = 1L;
@@ -29,9 +30,11 @@ public class Person  extends RepresentationModel<Person > implements Serializabl
 	@Mapping("id")
 	private Long key;
 
+	@JsonProperty("first_name")
 	@Column(name = "first_name", nullable = false , length = 50)
 	private String firstName;
 
+	@JsonProperty("last_name")
 	@Column(name = "last_name",nullable = false , length = 50)
 	private String lastName;
 
