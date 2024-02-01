@@ -1,5 +1,6 @@
 package br.com.jujubaprojects.restappspringboot.mapper.custom;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class PersonMapper {
         PersonVO vo = new PersonVO();
         vo.setKey(person.getKey());
         vo.setAddress(person.getAddress());
-        vo.setBirthday(new Date());
+        vo.setBirthday(LocalDate.now());
         vo.setFirstName(person.getFirstName());
         vo.setLastName(person.getLastName());
         vo.setGender(person.getGender());

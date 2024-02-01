@@ -5,12 +5,16 @@ import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-/* 
+
+import br.com.jujubaprojects.restappspringboot.Controller.person.PersonController;
+
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
-*/
+
 import br.com.jujubaprojects.restappspringboot.Model.person.Person;
 import br.com.jujubaprojects.restappspringboot.Repositories.PersonRepository;
+import br.com.jujubaprojects.restappspringboot.data.v1.PersonVO;
+import br.com.jujubaprojects.restappspringboot.mapper.DozerMapper;
 import br.com.jujubaprojects.restappspringboot.mapper.custom.PersonMapper;
 
 @Service
@@ -25,40 +29,56 @@ public class PersonService {
 	PersonMapper mapper;
 
     
-    	public List<Person> findAll() {
+    public List<PersonVO> findAll() {
+
 		logger.info("Finding all people!");
-		return this.personRepository.findAll();
+
+	   List<PersonVO> persons = DozerMapper.parseListObjects(personRepository.findAll(), PersonVO.class);
+
+		persons.stream().forEach(p -> p.add(linkTo(methodOn(PersonController.class).findById(p.getKey())).withSelfRel()));
+		return persons;
 	}
 
-	public Person findById(Long key) {
+	public PersonVO findById(Long id) {
 		
 		logger.info("Finding one person!");
-	
-		return this.personRepository.findById(key)
-		.orElseThrow();
-	}
-	
-	public Person create(Person person) {
-
-		logger.info("Creating one person!");
 		
-		return this.personRepository.save(person);
+		Person entity = personRepository.findById(id)
+			.orElseThrow(); //.orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
+		PersonVO vo = DozerMapper.parseObject(entity, PersonVO.class);
+		vo.add(linkTo(methodOn(PersonController.class).findById(id)).withSelfRel());
+
+		return vo;
 	}
 	
-	public Person update(Person person) {
+	public PersonVO create(PersonVO person) {
 
-		this.personRepository.findById(person.getKey())
-		.orElseThrow();
+		if (person == null) throw new Exception(); //throw new RequiredObjectIsNullException();
+		
+		logger.info("Creating one person!");
+		Person entity = DozerMapper.parseObject(person, Person.class);
+		PersonVO vo =  DozerMapper.parseObject(personRepository.save(entity), PersonVO.class);
+		vo.add(linkTo(methodOn(PersonController.class).findById(vo.getKey())).withSelfRel());
+		return vo;
+	}
+	
+	public PersonVO update(PersonVO person) {
+
+		if (person == null) throw new Exception();//throw new RequiredObjectIsNullException();
 		
 		logger.info("Updating one person!");
+		
+		Person entity = personRepository.findById(person.getKey())
+			.orElseThrow();
 
-	//	person.setId(counter.incrementAndGet());
-	    person.setFirstName(person.getFirstName());
-		person.setLastName(person.getLastName());
-		person.setAddress(person.getAddress());
-		person.setGender(person.getGender());
-
-		return this.personRepository.save(person);
+		entity.setFirstName(person.getFirstName());
+		entity.setLastName(person.getLastName());
+		entity.setAddress(person.getAddress());
+		entity.setGender(person.getGender());
+		
+		PersonVO vo =  DozerMapper.parseObject(personRepository.save(entity), PersonVO.class);
+		vo.add(linkTo(methodOn(PersonController.class).findById(vo.getKey())).withSelfRel());
+		return vo;
 	}
 	
 	public void delete(Long id) {

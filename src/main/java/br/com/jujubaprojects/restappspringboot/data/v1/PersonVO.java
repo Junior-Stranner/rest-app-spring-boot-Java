@@ -1,20 +1,30 @@
 package br.com.jujubaprojects.restappspringboot.data.v1;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
-public class PersonVO implements Serializable{
+import org.springframework.hateoas.RepresentationModel;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.github.dozermapper.core.Mapping;
+
+
+@JsonPropertyOrder({"id", "firstName", "lastName", "address", "gender"})
+public class PersonVO extends RepresentationModel<PersonVO> implements Serializable{
     
     private static final long serialVersionUID = 1L;
 
     
+	@JsonProperty("id")
+	@Mapping("id")
 	private Long key;
 	private String firstName;
 	private String lastName;
 	private String address;
 	private String gender;
 
-	private Date birthday;
+	private LocalDate birthday;
 	
 	public PersonVO() {}
 
@@ -64,19 +74,21 @@ public class PersonVO implements Serializable{
 		this.gender = gender;
 	}
 
-	public Date getBirthday() {
+	public LocalDate getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(LocalDate birthday) {
 		this.birthday = birthday;
 	}
+
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((key  == null) ? 0 : key .hashCode());
+		result = prime * result + ((key == null) ? 0 : key.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
 		result = prime * result + ((address == null) ? 0 : address.hashCode());
@@ -84,6 +96,8 @@ public class PersonVO implements Serializable{
 		result = prime * result + ((birthday == null) ? 0 : birthday.hashCode());
 		return result;
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -94,10 +108,10 @@ public class PersonVO implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		PersonVO other = (PersonVO) obj;
-		if (key  == null) {
-			if (other.key  != null)
+		if (key == null) {
+			if (other.key != null)
 				return false;
-		} else if (!key .equals(other.key ))
+		} else if (!key.equals(other.key))
 			return false;
 		if (firstName == null) {
 			if (other.firstName != null)

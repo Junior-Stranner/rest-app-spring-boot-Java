@@ -20,8 +20,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "person")
-@JsonPropertyOrder({"id", "first_name", "last_name", "adress", "gender"})
-public class Person  extends RepresentationModel<Person > implements Serializable{
+//@JsonPropertyOrder({"id", "first_name", "last_name", "adress", "gender"})
+public class Person implements Serializable{
     
     private static final long serialVersionUID = 1L;
 
@@ -30,11 +30,11 @@ public class Person  extends RepresentationModel<Person > implements Serializabl
 	@Mapping("id")
 	private Long key;
 
-	@JsonProperty("first_name")
+//	@JsonProperty("first_name")
 	@Column(name = "first_name", nullable = false , length = 50)
 	private String firstName;
 
-	@JsonProperty("last_name")
+//	@JsonProperty("last_name")
 	@Column(name = "last_name",nullable = false , length = 50)
 	private String lastName;
 

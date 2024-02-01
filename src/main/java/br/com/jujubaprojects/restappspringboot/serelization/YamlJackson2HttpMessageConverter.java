@@ -2,9 +2,9 @@
 
 import org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter;
 
-import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-import main.java.br.com.jujubaprojects.restappspringboot.Utils.MediaType;
+import br.com.jujubaprojects.restappspringboot.Utils.MediaType;
 
 public class YamlJackson2HttpMessageConverter extends AbstractJackson2HttpMessageConverter{
 
@@ -15,6 +15,5 @@ public class YamlJackson2HttpMessageConverter extends AbstractJackson2HttpMessag
 					JsonInclude.Include.NON_NULL),
 					MediaType.parseMediaType("application/x-yaml")
 				);
-	}
-
+	   }
 }*/
