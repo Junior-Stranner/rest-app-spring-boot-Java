@@ -3,8 +3,6 @@ package br.com.jujubaprojects.restappspringboot.mapper;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.modelmapper.ModelMapper;
-
 import br.com.jujubaprojects.restappspringboot.Model.person.Person;
 import br.com.jujubaprojects.restappspringboot.data.v1.PersonVO;
 
