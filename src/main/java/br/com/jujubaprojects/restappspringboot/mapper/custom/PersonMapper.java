@@ -14,7 +14,7 @@ public class PersonMapper {
         PersonVO vo = new PersonVO();
         vo.setKey(person.getId());
         vo.setAddress(person.getAddress());
-     //   vo.setBirthday(LocalDate.now());
+        vo.setBirthday(LocalDate.now());
         vo.setFirstName(person.getFirstName());
         vo.setLastName(person.getLastName());
         vo.setGender(person.getGender());

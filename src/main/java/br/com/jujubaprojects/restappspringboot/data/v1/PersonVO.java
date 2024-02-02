@@ -30,31 +30,13 @@ public class PersonVO extends RepresentationModel<PersonVO> implements Serializa
 
 
 
-
-
-
-
-
 	public Long getKey() {
 		return key;
 	}
 
-
-
-
-
-
-
-
 	public void setKey(Long key) {
 		this.key = key;
 	}
-
-
-
-
-
-
 
 
 	public String getFirstName() {
