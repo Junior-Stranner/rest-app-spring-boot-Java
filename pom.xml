@@ -14,7 +14,7 @@
 	<name>rest-app-spring-boot</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>20</java.version> <!-- Atualizei para a versão 17 do Java -->
+		<java.version>17</java.version> <!-- Atualizei para a versão 17 do Java -->
 		<dozer.version>6.5.2</dozer.version>
 		<dozer.version>6.5.2</dozer.version>
 		<springdoc.version>2.3.0</springdoc.version>

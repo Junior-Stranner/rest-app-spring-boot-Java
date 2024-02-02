@@ -21,3 +21,17 @@ server:
   error:
     whitelabel:
       enabled: false
+    spring-doc:
+      pathsToMatch: /api/**/v1/**
+       # essa configuração está instruindo o Springdoc a 
+      #considerar para documentação apenas os caminhos que seguem o padrão /api/**/v1/** na sua aplicação.
+
+     # /api/user/v1/get ou /api/products/v1/details, esses serão incluídos na documentação gerada pelo Springdoc.
+     #  Essa abordagem facilita a organização e a apresentação da documentação, especialmente em casos onde há múltiplas versões da API.
+    swagger-ui: 
+     use-root-path:true
+
+
+
+
+
