@@ -14,6 +14,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import br.com.jujubaprojects.restappspringboot.Model.person.Person;
 import br.com.jujubaprojects.restappspringboot.Repositories.PersonRepository;
 import br.com.jujubaprojects.restappspringboot.data.v1.PersonVO;
+import br.com.jujubaprojects.restappspringboot.exceptions.ResourceNotFoundException;
 import br.com.jujubaprojects.restappspringboot.mapper.DozerMapper;
 import br.com.jujubaprojects.restappspringboot.mapper.custom.PersonMapper;
 
@@ -44,7 +45,7 @@ public class PersonService {
 		logger.info("Finding one person!");
 		
 		Person entity = personRepository.findById(id)
-			.orElseThrow(); //.orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
+			.orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
 		PersonVO vo = DozerMapper.parseObject(entity, PersonVO.class);
 		vo.add(linkTo(methodOn(PersonController.class).findById(id)).withSelfRel());
 

@@ -89,8 +89,7 @@ public class PersonController {
 	}
 
 
-	@PutMapping(
-		produces =  MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(produces =  MediaType.APPLICATION_JSON_VALUE)
 	@Operation(summary = "Updates a Person",
 		description = "Updates a Person by passing in a JSON, XML or YML representation of the person!",
 		tags = {"People"},
