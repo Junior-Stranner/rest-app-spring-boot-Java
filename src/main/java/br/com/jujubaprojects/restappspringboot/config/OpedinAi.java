@@ -13,7 +13,7 @@ import io.swagger.v3.oas.models.info.License;
 public class OpedinAi {
     
     @Bean
-    public OpenAPI customOpenAPI() {
+    OpenAPI customOpenAPI() {
         return new OpenAPI()  // Instancia um objeto OpenAPI para configurar informações da documentação.
             .info(new Info()  // Configura as informações gerais da API.
                 .title("RESTful API with Java 17 and Spring Boot 3")  // Título da API.

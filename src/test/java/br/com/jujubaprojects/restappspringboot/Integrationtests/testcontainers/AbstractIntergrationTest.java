@@ -3,6 +3,9 @@ package br.com.jujubaprojects.restappspringboot.Integrationtests.testcontainers;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static org.testcontainers.utility.DockerImageName.parse;
+
+
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
@@ -11,7 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.lifecycle.Startables;
 
-@ContextConfiguration(inheritInitializers = AbstractIntergrationTest.Initializer.class)
+@ContextConfiguration(initializers = AbstractIntergrationTest.Initializer.class)
 public class AbstractIntergrationTest {
 
 
