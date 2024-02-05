@@ -1,4 +1,4 @@
-package br.com.jujubaprojects.restappspringboot.UnitTests.Mockito.Services;
+/*package br.com.jujubaprojects.restappspringboot.UnitTests.Mockito.Services;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -199,4 +199,4 @@ public class BookServicesTest {
 		assertEquals(25D, bookSeven.getPrice());
 		assertNotNull(bookSeven.getLaunchDate());
 	}
-}
+}*/

@@ -121,7 +121,7 @@ public class PersonService {
 		
 		logger.info("Deleting one person!");
 		
-       // Busca a entidade persistente no repositório usando a chave
+    // Busca a entidade persistente no repositório usando a chave
 		Person person = this.personRepository.findById(id)
 		.orElseThrow();
 		
