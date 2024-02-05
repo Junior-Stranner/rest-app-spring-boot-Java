@@ -1,4 +1,4 @@
-/*package br.com.jujubaprojects.restappspringboot.UnitTests.Mockito.Services;
+/*package br.com.jujubaprojects.restappspringboot.unitests.Mockito.Services;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

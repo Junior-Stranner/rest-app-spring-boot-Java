@@ -1,4 +1,4 @@
-package br.com.jujubaprojects.restappspringboot.UnitTests.mapper.Mocks;
+package br.com.jujubaprojects.restappspringboot.unitests.mapper.Mocks;
 
 import java.util.ArrayList;
 import java.util.List;

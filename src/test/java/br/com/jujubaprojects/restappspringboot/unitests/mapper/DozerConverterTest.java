@@ -1,4 +1,4 @@
-package br.com.jujubaprojects.restappspringboot.UnitTests.mapper;
+package br.com.jujubaprojects.restappspringboot.unitests.mapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -8,8 +8,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import br.com.jujubaprojects.restappspringboot.Model.person.Person;
-import br.com.jujubaprojects.restappspringboot.UnitTests.mapper.Mocks.MockPerson;
 import br.com.jujubaprojects.restappspringboot.mapper.DozerMapper;
+import br.com.jujubaprojects.restappspringboot.unitests.mapper.Mocks.MockPerson;
 
 public class DozerConverterTest {
     
