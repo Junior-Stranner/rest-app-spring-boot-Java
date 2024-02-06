@@ -1,18 +1,32 @@
 cors:
   originPatterns: http://localhost:8080,https://jujubaprojects.com.br,http://localhost:3000 
+  # Define os padrões de origem permitidos para solicitações CORS
+
 server:
   port: 8888
+  # Define a porta na qual o servidor Spring Boot será executado
+
 spring:
   datasource:
+    # Configurações do banco de dados
   driver-class-name: org.postgresql.Driver
+    # Define a classe do driver JDBC para PostgreSQL
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
+      # Desativa a geração automática de instruções DDL pelo Hibernate
     properties:
       hibernate:
-  dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Define o dialeto do Hibernate para PostgreSQL
     show-sql: false
+    # Define se o Hibernate deve ou não exibir consultas SQL
+
 springdoc:
   pathsToMatch: /api/**/v1/**
+  # Define os caminhos que serão considerados para documentação pelo Springdoc
+  # Apenas os caminhos que seguem o padrão /api/**/v1/** na aplicação serão incluídos na documentação
+
   swagger-ui:
     use-root-path: true
+    # Define se o Swagger UI usará o caminho raiz do servidor para localizar a API

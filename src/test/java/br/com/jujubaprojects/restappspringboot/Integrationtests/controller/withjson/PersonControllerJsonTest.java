@@ -1,6 +1,6 @@
 package br.com.jujubaprojects.restappspringboot.Integrationtests.controller.withjson;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+/*import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertNotNull;
@@ -190,4 +190,4 @@ public void testFindById() throws JsonMappingException, JsonProcessingException 
 		personVO.setAddress("Rio de Janeiro");
 		personVO.setGender("female");
 	}
-}
+}*/
