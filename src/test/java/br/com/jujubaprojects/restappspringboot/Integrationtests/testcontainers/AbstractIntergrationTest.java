@@ -3,9 +3,6 @@ package br.com.jujubaprojects.restappspringboot.Integrationtests.testcontainers;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static org.testcontainers.utility.DockerImageName.parse;
-
-
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;

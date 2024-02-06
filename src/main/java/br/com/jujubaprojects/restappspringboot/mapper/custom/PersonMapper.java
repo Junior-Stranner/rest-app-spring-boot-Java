@@ -33,4 +33,17 @@ public class PersonMapper {
         return entity;
 
     }
+
 }
+
+ /*    Outra forma de Fazer 
+       @Mapper
+       public interface AutoUserMapper {
+
+       AutoUserMapper MAPPER = Mappers.getMapper(AutoUserMapper.class);
+
+       UserDto mapToUserDto(User user);
+
+       User mapToUser(UserDto userDto);
+}
+*/ 
