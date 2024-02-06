@@ -13,35 +13,41 @@ import org.testcontainers.lifecycle.Startables;
 
 @ContextConfiguration(initializers = AbstractIntergrationTest.Initializer.class)
 public class AbstractIntergrationTest {
+    
+// Inicializador para configurar e iniciar contêineres do Testcontainers
+public class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
+    
+    // Contêiner PostgreSQL para o banco de dados
+    static PostgreSQLContainer<?> postgresql = new PostgreSQLContainer<>("postgresql:15.5");
 
+    // Método para iniciar os contêineres
+    private static void startContainers() {
+        Startables.deepStart(Stream.of(postgresql)).join();
+    }
 
-    	public class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
-         static PostgreSQLContainer<?> postgresql = new PostgreSQLContainer<>("postgresql: 15.5");
+    // Método para criar a configuração de conexão com o banco de dados
+    private Map<String, String> createConnectionConfiguration() {
+        return Map.of(
+            "spring.datasource.url", postgresql.getJdbcUrl(),
+            "spring.datasource.username", postgresql.getUsername(),
+            "spring.datasource.password", postgresql.getPassword()
+        );
+    }
 
-         private static void startContainers(){
-            Startables.deepStart(Stream.of(postgresql)).join();
-         }
-
-         
-         private Map createConnectionConfiguration() {
-            return Map.of(
-				"spring.datasource.url", postgresql.getJdbcUrl(),
-				"spring.datasource.username", postgresql.getUsername(),
-				"spring.datasource.password", postgresql.getPassword()
-			);
-        
-         }
-
-            @SuppressWarnings({"unchecked", "rawtypes"})
-            @Override
-            public void initialize(ConfigurableApplicationContext applicationContext) {
-              startContainers();
-              ConfigurableEnvironment environment = applicationContext.getEnvironment();
-              MapPropertySource testcontainers = new MapPropertySource(
-                "testcontainers", 
-                (Map) createConnectionConfiguration());
-                environment.getPropertySources().addFirst(testcontainers);
-            }
-
-        }
+    // Método para inicializar o contexto da aplicação
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    @Override
+    public void initialize(ConfigurableApplicationContext applicationContext) {
+        // Inicia os contêineres
+        startContainers();
+        // Obtém o ambiente configurável da aplicação
+        ConfigurableEnvironment environment = applicationContext.getEnvironment();
+        // Cria uma fonte de propriedades a partir da configuração de conexão com o banco de dados
+        MapPropertySource testcontainers = new MapPropertySource(
+            "testcontainers",
+            (Map) createConnectionConfiguration());
+        // Adiciona a fonte de propriedades ao ambiente
+        environment.getPropertySources().addFirst(testcontainers);
+    }
+  }
 }
