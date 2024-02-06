@@ -1,16 +1,19 @@
-package br.com.jujubaprojects.restappspringboot.Integrationtests.swagger;
+package br.com.jujubaprojects.restappspringboot.Integrationtests.controller.withjson;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import static io.restassured.RestAssured.given;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.jujubaprojects.restappspringboot.configs.TestConfigs;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-public class SwaggerIntegrationTest {
+@TestMethodOrder(OrderAnnotation.class)
+public class PersonControllerJsonTest  {
     
 	@Test
 	public void shouldDisplaySwaggerUiPage() {

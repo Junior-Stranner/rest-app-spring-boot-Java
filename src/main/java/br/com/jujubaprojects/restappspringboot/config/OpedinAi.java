@@ -19,10 +19,10 @@ public class OpedinAi {
                 .title("RESTful API with Java 17 and Spring Boot 3")  // Título da API.
                 .version("v1")  // Versão da API.
                 .description("Some description about your API")  // Descrição breve da API.
-                .termsOfService("https://pub.erudio.com.br/meus-cursos")  // Termos de serviço da API.
+                .termsOfService("https://jujubaprojects.com.br/meus-cursos")  // Termos de serviço da API.
                 .license(new License()  // Informações sobre a licença da API.
                     .name("Apache 2.0")  // Nome da licença.
-                    .url("https://pub.erudio.com.br/meus-cursos"))  // URL da licença.
+                    .url("https://jujubaprojects.com.br/meus-cursos"))  // URL da licença.
                 .contact(new Contact()  // Informações de contato.
                     .name("Junior Stranner")  // Nome do contato.
                     .email("Junior@spring-park.com")));  // Endereço de e-mail do contato.

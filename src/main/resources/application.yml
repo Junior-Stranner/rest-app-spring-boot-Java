@@ -1,3 +1,5 @@
+cors:
+  originPatterns: http://localhost:8080,https://jujubaprojects.com.br,http://localhost:3000 # sem espacos
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/rest-app-spring-boot
