@@ -3,7 +3,7 @@ package br.com.jujubaprojects.restappspringboot.exceptions;
 import java.io.Serializable;
 import java.util.Date;
 
-public class ExeptionsResponse implements Serializable{
+public class ExceptionResponse implements Serializable{
     
     private static final long SerializableUID = 1L;
 
@@ -11,7 +11,7 @@ public class ExeptionsResponse implements Serializable{
    private String message;
    private String details;
    
-public ExeptionsResponse(Date timestamp, String message, String details) {
+public ExceptionResponse(Date timestamp, String message, String details) {
     this.timestamp = timestamp;
     this.message = message;
     this.details = details;
