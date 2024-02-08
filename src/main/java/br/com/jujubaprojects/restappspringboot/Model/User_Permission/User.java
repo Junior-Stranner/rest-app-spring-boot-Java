@@ -74,6 +74,12 @@ public class User implements UserDetails, Serializable {
 		return this.permissions;
 	}
 
+     /*   @Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+        if(this.userRole == userRole.ADMIN) return List.of(new SimpleGrantedAuthorities("ROLE_ADMIN"), new SimpleGrantedAuthorities("ROLE_USER"));
+		else return List.of(new SimpleGrantedAuthorities("ROLE_USER"));
+	}*/
+
 	@Override
 	public String getPassword() {
 		return this.password;
