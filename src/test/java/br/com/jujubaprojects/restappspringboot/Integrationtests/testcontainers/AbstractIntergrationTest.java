@@ -13,7 +13,7 @@ import org.testcontainers.lifecycle.Startables;
 
 @ContextConfiguration(initializers = AbstractIntergrationTest.Initializer.class)
 public class AbstractIntergrationTest {
-    
+
 // Inicializador para configurar e iniciar contêineres do Testcontainers
 public class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
     

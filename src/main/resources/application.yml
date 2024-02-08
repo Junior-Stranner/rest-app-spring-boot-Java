@@ -1,30 +1,50 @@
 cors:
-  originPatterns: http://localhost:8080,https://jujubaprojects.com.br,http://localhost:3000 # Define os padrões de origem permitidos para solicitações CORS
-  
+  originPatterns: http://localhost:8080,https://jujubaprojects.com.br,http://localhost:3000
+  # Define os padrões de origem permitidos para solicitações CORS
+
+security:
+  jwt:
+    token:
+      secret-key: 53cr37  # Chave secreta para assinar e verificar tokens JWT
+      expire-length: 3600000  # Tempo de expiração dos tokens JWT em milissegundos (1 hora)
+
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/rest-app-spring-boot  # URL do banco de dados PostgreSQL
-    username: postgres  # Nome de usuário do banco de dados PostgreSQL
-    password: 123  # Senha do banco de dados PostgreSQL
-    driver-class-name: org.postgresql.Driver  # Nome da classe do driver JDBC para o PostgreSQL
+    url: jdbc:postgresql://localhost:5432/rest-app-spring-boot
+    # URL do banco de dados PostgreSQL
+    username: postgres
+    # Nome de usuário do banco de dados PostgreSQL
+    password: 123
+    # Senha do banco de dados PostgreSQL
+    driver-class-name: org.postgresql.Driver
+    # Nome da classe do driver JDBC para o PostgreSQL
+
   jpa:
-    show-sql: true  # Ativa a exibição de consultas SQL geradas pelo Hibernate
+    show-sql: true
+    # Ativa a exibição de consultas SQL geradas pelo Hibernate
     hibernate:
-      ddl-auto: none  # Desativa a geração automática de instruções DDL pelo Hibernate
+      ddl-auto: none
+      # Desativa a geração automática de instruções DDL pelo Hibernate
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect  # Define o dialeto do Hibernate para PostgreSQL
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Define o dialeto do Hibernate para PostgreSQL
 
 flyway:
-  locations: classpath:db/migration  # Especifica o diretório onde os scripts SQL do Flyway estão localizados
-  baselineOnMigrate: true  # Cria uma linha de base se ela ainda não existir durante a migração do Flyway
+  locations: classpath:db/migration
+  # Especifica o diretório onde os scripts SQL do Flyway estão localizados
+  baselineOnMigrate: true
+  # Cria uma linha de base se ela ainda não existir durante a migração do Flyway
 
 server:
   error:
     whitelabel:
-      enabled: false  # Desativa as páginas de erro padrão do Spring Boot
+      enabled: false
+      # Desativa as páginas de erro padrão do Spring Boot
     spring-doc:
-      pathsToMatch: /api/**/v1/**  # Define os caminhos que serão considerados para documentação pelo Springdoc
+      pathsToMatch: /api/**/v1/**
+      # Define os caminhos que serão considerados para documentação pelo Springdoc
       # Apenas os caminhos que seguem o padrão /api/**/v1/** na aplicação serão incluídos na documentação
     swagger-ui: 
-     use-root-path:true  # Define se o Swagger UI usará o caminho raiz do servidor para localizar a API
+      use-root-path: true
+      # Define se o Swagger UI usará o caminho raiz do servidor para localizar a API

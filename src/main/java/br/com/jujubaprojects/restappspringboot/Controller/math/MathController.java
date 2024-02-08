@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.jujubaprojects.restappspringboot.Converter.NumberConverter;
-import br.com.jujubaprojects.restappspringboot.exceptions.RecorceNotFoundException;
+import br.com.jujubaprojects.restappspringboot.exceptions.math.UnsupportedMathOperationException;
 import br.com.jujubaprojects.restappspringboot.math.SimpleMath;
 
 
@@ -22,7 +22,7 @@ public class MathController {
     public double sum(@PathVariable(value = "numberOne")  String numberOne, @PathVariable(value ="nummberTwo") String numberTwo) throws Exception{
 
         if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)){
-            throw new RecorceNotFoundException("Please set a Numeric value");
+            throw new UnsupportedMathOperationException("Please set a Numeric value");
         }
 		return math.sum(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
 
@@ -32,7 +32,7 @@ public class MathController {
     public double subtration(@PathVariable(value = "numberOne")  String numberOne, @PathVariable(value ="numberTwo") String numberTwo)throws Exception{
 
         if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)){
-            throw new RecorceNotFoundException("Please set a Numeric value");
+            throw new UnsupportedMathOperationException("Please set a Numeric value");
         }
       
 		return math.subtraction(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
@@ -42,7 +42,7 @@ public class MathController {
     public double multiplication(@PathVariable(value = "numberOne")  String numberOne, @PathVariable(value ="numberTwo") String numberTwo)throws Exception{
 
         if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)){
-            throw new RecorceNotFoundException("Please set a Numeric value");
+            throw new UnsupportedMathOperationException("Please set a Numeric value");
         }
       
 		return math.multiplication(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
@@ -53,7 +53,7 @@ public class MathController {
     public double division(@PathVariable(value = "numberOne")  String numberOne, @PathVariable(value ="numberTwo") String numberTwo)throws Exception{
 
         if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)){
-            throw new RecorceNotFoundException("Please set a Numeric value");
+            throw new UnsupportedMathOperationException("Please set a Numeric value");
         }
       
 		return math.division(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
@@ -63,7 +63,7 @@ public class MathController {
     public double mean(@PathVariable(value = "numberOne")  String numberOne, @PathVariable(value ="numberTwo") String numberTwo)throws Exception{
 
         if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)){
-            throw new RecorceNotFoundException("Please set a Numeric value");
+            throw new UnsupportedMathOperationException("Please set a Numeric value");
         }
       
 		return math.mean(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));

@@ -2,8 +2,8 @@ package br.com.jujubaprojects.restappspringboot.Model.User_Permission;
 
 import java.io.Serializable;
 
-import org.springframework.security.core.GrantedAuthority;
 
+import org.springframework.security.core.GrantedAuthority;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package br.com.jujubaprojects.restappspringboot.data.v1.Security;
+package br.com.jujubaprojects.restappspringboot.data.v1.security;
 
 import java.time.LocalDate;
 
