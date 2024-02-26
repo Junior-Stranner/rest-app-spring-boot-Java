@@ -1,4 +1,4 @@
-package br.com.jujubaprojects.restappspringboot.Service.User_Permission;
+/*package br.com.jujubaprojects.restappspringboot.Service.User_Permission;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -28,7 +28,7 @@ public class UserService implements UserDetailsService{
      * 
      * o risco que pode occorer é quando acontece um nullpointException
      * quando agente chamar ele e não existir a instancia dele , e esse é o risco 
-     * que ocorre*/
+     * que ocorre
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -52,4 +52,4 @@ public class UserService implements UserDetailsService{
 
         return entities;
     }
-}
+}*/

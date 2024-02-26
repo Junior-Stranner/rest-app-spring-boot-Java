@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:16.2
+    restart: always
+    environment:
+      TZ: America/Sao_Paulo
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: rest-app-spring-boot
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+    networks:
+      - jujuba-network
+  rest-with-spring-boot-:
+    image: jujuba/rest-with-spring-boot-
+    restart: always
+    build: ./rest-app-spring-boot
+    working_dir: /rest-app-spring-boot
+    environment:
+      TZ: America/Sao_Paulo
+      SPRING.DATASOURCE.URL: jdbc:postgresql://db:5432/rest-app-spring-boot
+      SPRING.DATASOURCE.USERNAME: postgres
+      SPRING.DATASOURCE.PASSWORD: 123
+    ports:
+      - 80:80
+    command: mvn spring-boot:run
+    depends_on:
+      - db
+    networks:
+      - jujuba-network
+networks:
+  jujuba-network:
+    driver: bridge

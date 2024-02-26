@@ -1,10 +1,10 @@
-/*package br.com.jujubaprojects.restappspringboot.serelization;
+package br.com.jujubaprojects.restappspringboot.serelization;
 
 import org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-
-import br.com.jujubaprojects.restappspringboot.Utils.MediaType;
+import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
+import org.springframework.http.MediaType;
 
 public class YamlJackson2HttpMessageConverter extends AbstractJackson2HttpMessageConverter{
 
@@ -16,4 +16,4 @@ public class YamlJackson2HttpMessageConverter extends AbstractJackson2HttpMessag
 					MediaType.parseMediaType("application/x-yaml")
 				);
 	   }
-}*/
+}

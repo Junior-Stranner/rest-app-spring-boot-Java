@@ -12,8 +12,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
-
 @Entity
 @Table(name = "person")
 public class Person implements Serializable{
@@ -53,11 +51,6 @@ public class Person implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-
-
-
-
 
 
 	public String getFirstName() {
