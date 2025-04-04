@@ -15,10 +15,8 @@ import jakarta.servlet.http.HttpServletRequest;
 
 public class JwtTokenFilter extends GenericFilterBean{
 
-    @Autowired
-    private JwtTokenProvider tokenProvider;
 
-    
+    private final JwtTokenProvider tokenProvider;
 
     public JwtTokenFilter(JwtTokenProvider tokenProvider) {
         this.tokenProvider = tokenProvider;

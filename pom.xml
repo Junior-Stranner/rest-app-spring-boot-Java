@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.2</version>
+		<version>3.0.0-M2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.jujubaprojects</groupId>
@@ -14,14 +14,12 @@
 	<name>rest-app-spring-boot</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>17</java.version> <!-- Atualizei para a versão 17 do Java -->
+		<java.version>18</java.version> <!-- Atualizei para a versão 17 do Java -->
 		<dozer.version>6.5.2</dozer.version>
 		<springdoc.version>2.2.0</springdoc.version>
 		<testcontainers.version>1.16.3</testcontainers.version>
 		<rest-assured.version>4.5.0</rest-assured.version>
 			<java-jwt.version>3.18.3</java-jwt.version>
-
-
 
 	</properties>
 	<dependencies>
@@ -135,7 +133,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
 	<repositories>
 		<repository>
 			<id>spring-milestones</id>
@@ -146,4 +143,15 @@
 			</snapshots>
 		</repository>
 	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
 </project>
