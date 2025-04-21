@@ -17,11 +17,18 @@ spring:
     open-in-view: false
 
   flyway:
-    baselineOnMigrate: true
-    validateOnMigrate: false
+    baseline-on-migrate: true
+    validate-on-migrate: false
     enabled: false
 
 logging:
   level:
-    #  root: WARN
     br.com.judev: DEBUG
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+

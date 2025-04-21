@@ -13,7 +13,7 @@ public class MockPerson {
         return mockEntity(0);
     }
 
-    public PersonDTOV2 mockDTO() {
+    public PersonDTO mockDTO() {
         return mockDTO(0);
     }
 
@@ -25,8 +25,8 @@ public class MockPerson {
         return persons;
     }
 
-    public List<PersonDTOV2> mockDTOList() {
-        List<PersonDTOV2> persons = new ArrayList<>();
+    public List<PersonDTO> mockDTOList() {
+        List<PersonDTO> persons = new ArrayList<>();
         for (int i = 0; i < 14; i++) {
             persons.add(mockDTO(i));
         }
@@ -44,7 +44,7 @@ public class MockPerson {
     }
 
     public PersonDTO mockDTO(Integer number) {
-        PersonDTOV2 person = new PersonDTOV2();
+        PersonDTO person = new PersonDTO();
         person.setAddress("Address Test" + number);
         person.setFirstName("First Name Test" + number);
         person.setGender(((number % 2)==0) ? "Male" : "Female");

@@ -4,6 +4,7 @@ import br.com.judev.version2025ju.controllers.documentation.PersonDocumentationC
 import br.com.judev.version2025ju.dto.v1.PersonDTO;
 import br.com.judev.version2025ju.dto.v2.PersonDTOV2;
 import br.com.judev.version2025ju.services.PersonService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.List;
 @Validated
 @RestController
 @RequestMapping("/api/v1/person")
+@Tag(name = "People", description = "Endpoints for Managing People")
 public class PersonController implements PersonDocumentationController {
     @Autowired
     private PersonService service;
